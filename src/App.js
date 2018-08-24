@@ -18,29 +18,33 @@ class App extends Component {
     super(props);
     this.state = {
       theme: '',
-      news: []
+      news: [],
+      searchTerm: ''
     }
 
     this.newsSearch = this.newsSearch.bind(this)
-    this.newsSearch('sports');
+    this.newsSearch('general', '');
   }
 
-  newsSearch(term) {
-
-    fetch(`https://newsapi.org/v2/top-headlines?country=pl&category=${term}&apiKey=${API_KEY}`)
+  newsSearch(term, search) {
+    fetch(`https://newsapi.org/v2/top-headlines?language=en&q=${search}&category=${term}&apiKey=${API_KEY}`)
       .then(data => data.json())
       .then(data => this.setState({
         theme: term,
-        news: data.articles
+        news: data.articles,
+        searchTerm: search
       }))
-      .then(() => console.log(this.state.news));
+      .then(() => console.log(this.state.news))
+      .then(() => console.log(term))
+      .then(() => console.log(search))
 
   }
 
   render() {
+    
     return (
       <div className="App">
-
+        <SearchBar onSearchTermChange={this.newsSearch}/>
       </div>
     );
   }
