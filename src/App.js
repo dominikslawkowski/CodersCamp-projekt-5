@@ -27,8 +27,7 @@ class App extends Component {
   }
 
   newsSearch(term, search) {
-    search = '&q=' + search;
-    fetch(`https://newsapi.org/v2/top-headlines?language=en${search}&category=${term}&apiKey=${API_KEY}`)
+    fetch(`https://newsapi.org/v2/top-headlines?language=en&q=${search}&category=${term}&apiKey=${API_KEY}`)
       .then(data => data.json())
       .then(data => this.setState({
         theme: term,
@@ -38,7 +37,6 @@ class App extends Component {
       .then(() => console.log(this.state.news))
       .then(() => console.log(term))
       .then(() => console.log(search))
-      .then(() => console.log(`https://newsapi.org/v2/top-headlines?country=uk${search}&category=${term}&apiKey=${API_KEY}`));
 
   }
 
@@ -46,7 +44,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <SearchBar onSearchTermChange={(searchTerm) => this.newsSearch('',searchTerm)}/>
+        <SearchBar onSearchTermChange={this.newsSearch}/>
       </div>
     );
   }
