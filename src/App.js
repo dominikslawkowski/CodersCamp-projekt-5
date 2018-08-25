@@ -69,6 +69,7 @@ class App extends Component {
     
     return (
       <div className="App">
+        <Welcome onClickChooseNews={this.newsSearch}/>
         <SearchBar onSearchTermChange={this.newsSearch}/>
 
         <Category categories={this.state.categories} categoryClicked={this.newsSearch}/>
