@@ -5,7 +5,7 @@ import './App.css';
 import Welcome from './components/Welcome';
 import SearchBar from './components/SearchBar';
 import Category from './components/Category';
-import NewsList from './components/NewsList';
+import {NewsList} from './components/NewsList';
 
 //Klucz potrzebny do pobrania danych z api o wiadomosciach
 const API_KEY = '0cc530dfbcad49d39ee43d21303c2cbc';
@@ -47,6 +47,7 @@ class App extends Component {
       <div className="App">
         <SearchBar onSearchTermChange={this.newsSearch}/>
         <Category categories={this.state.categories} categoryClicked={this.newsSearch}/>
+        <NewsList news={this.state.news}/>
       </div>
     );
   }
