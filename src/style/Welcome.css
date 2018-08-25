@@ -1,0 +1,55 @@
+
+  .welcome-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 16px;
+    background-color: #000;
+  }
+  
+  .welcome-inscription{
+    text-decoration: underline;
+    margin: 0;
+    text-underline-position: under;
+    color: #9eb3ff;
+    font-size: 5em;
+    letter-spacing: 5px;
+    margin-bottom: 2%;
+  }
+  
+  .welcome-category:hover {
+    color: #949fc7;
+    background-color: #000;
+    cursor: pointer;
+  }
+  
+  .welcome-category {
+    width: calc(28% - 6px);
+    height: 15%;
+    padding: 0.5%;
+    margin: 2%;
+    display:inline-block;
+    text-align: center;
+    background-color: #949fc7;
+    border-radius: 30px;
+    border: 3px solid #949fc7;
+  }
+  
+  .welcome {
+    text-align: center;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding:0;
+    margin:0;
+    height: 20vh;
+    letter-spacing: 5px;
+  }
+  
+  .welcome-categories-wrapper{
+    width: 50vw;
+    height: 20vh;
+  }
+  

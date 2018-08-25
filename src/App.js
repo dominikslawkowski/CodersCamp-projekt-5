@@ -21,8 +21,9 @@ class App extends Component {
       news: []
     }
 
-    this.newsSearch = this.newsSearch.bind(this)
-    this.newsSearch('sports');
+    this.newsSearch = this.newsSearch.bind(this);
+    this.newsSearch('general', '');
+   
   }
 
   newsSearch(term) {
@@ -40,7 +41,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <Welcome onClickChooseNews={term => this.newsSearch(term)}/>
       </div>
     );
   }
