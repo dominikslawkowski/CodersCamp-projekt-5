@@ -6,23 +6,24 @@ const styleForContainerOfNews = {
     gridTemplateColumns: 'auto auto auto',
     gridTemplateRows: 'auto'
 }
+const defaultState = [
+    {
+        author: 'name',
+        title: 'title',
+        description: 'lorem?'
+    },
+    {
+        author: 'name',
+        title: 'title',
+        description: 'lorem?'
+    },
+    {
+        author: 'name',
+        title: 'title',
+        description: 'lorem?'
+    }
+]
 export class NewsList extends React.Component{
-    constructor(props){
-        super(props);
-        
-    }
-    componentWillReceiveProps() {
-        const received = this.props.news;
-        this.setState({
-            news: received
-        })
-    }
-    componentWillMount() {
-        const received = this.props.news;
-        this.setState({
-            news: received
-        })
-    }
     render(){
         const tabOfElementsToDisplay =[];
         const divideNewsBetweenTilts = (arrayOfNewsObjects) => {
@@ -31,7 +32,7 @@ export class NewsList extends React.Component{
                 tabOfElementsToDisplay.push(elementToDisplay);
             })
         }
-        divideNewsBetweenTilts(this.state.news);
+        divideNewsBetweenTilts(this.props.news);
         return(
             <div style={styleForContainerOfNews}>
                 {tabOfElementsToDisplay}
