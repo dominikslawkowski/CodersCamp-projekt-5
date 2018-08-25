@@ -1,0 +1,25 @@
+
+.category {
+    width: 60%;
+    margin: 20px auto;
+}
+
+.category-list {
+    display:grid;
+    grid-gap: 5%;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    justify-content: space-between;
+}
+
+.category-element {
+    padding: 5px;
+    background-color:rgb(189, 183, 226);
+    text-align: center; 
+    margin-bottom: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.category-element:hover {
+    background-color: rgb(149, 140, 199);
+}

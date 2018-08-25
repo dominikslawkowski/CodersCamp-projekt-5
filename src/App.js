@@ -19,7 +19,8 @@ class App extends Component {
     this.state = {
       theme: '',
       news: [],
-      searchTerm: ''
+      searchTerm: '',
+      categories: ['business', 'general', 'health', 'science', 'sports', 'technology']
     }
 
     this.newsSearch = this.newsSearch.bind(this)
@@ -45,6 +46,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar onSearchTermChange={this.newsSearch}/>
+        <Category categories={this.state.categories} categoryClicked={this.newsSearch}/>
       </div>
     );
   }
