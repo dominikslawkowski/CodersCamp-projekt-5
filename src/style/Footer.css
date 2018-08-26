@@ -1,0 +1,36 @@
+a.personalLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+a.personalLink:visited{
+    color: white;
+    text-decoration: none;
+}
+a.personalLink:hover {
+    color: gray;
+    background: white;
+    text-decoration: none;
+}
+a.personalLink:active{
+    color: white;
+    text-decoration: none;
+}
+.footerDescription{
+    width: 50%;
+}
+@media only screen and (max-width: 1000px){
+    .footerDescription {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .footerDescription {
+        width: 90%;
+    }
+}

@@ -3,7 +3,6 @@ import '../style/Welcome.css';
 
 class Welcome extends Component {
    
-    
     constructor(props){
         super(props)
 
@@ -14,16 +13,13 @@ class Welcome extends Component {
 
     handleSubmit(txt){
         this.props.onClickChooseNews(txt, '');
+        this.props.changeState();
     }
-    
     
     chooseCattegory(e){
         var value = e.target.innerHTML;
         this.setState({term: e.currentTarget.innerHTML}, this.handleSubmit(value));
-
-              
-
-  }
+    }
 
     render(){
         return (
@@ -43,7 +39,6 @@ class Welcome extends Component {
            </div>     
         )
     }
-
 }
 
 export default Welcome;

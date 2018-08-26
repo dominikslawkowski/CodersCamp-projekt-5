@@ -1,8 +1,9 @@
 import React from 'react';
 import News from './News';
+
 const styleForContainerOfNews = {
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     flexWrap: 'wrap',
     width: '100%',
     margin: '0 auto',
@@ -10,24 +11,38 @@ const styleForContainerOfNews = {
 }
 
 export class NewsList extends React.Component{
+    constructor(props){
+        super(props),
+        this.tabOfElementsToDisplay=[];
+    }
+    nothingToDisplay = (conditions) => {
+        this.tabOfElementsToDisplay = [];
+        const nothing = 
+        <div key="nothing">
+            <h3>You have searcherd for </h3> 
+            <h2> {conditions} </h2> 
+            <p>Sorry, there is nothing to display
+            under such conditions of searching.</p> 
+        </div>
+        this.tabOfElementsToDisplay.push(nothing);
+    }
+    divideNewsBetweenTilts = (arrayOfNewsObjects) => {
+        this.tabOfElementsToDisplay = [];
+        arrayOfNewsObjects.forEach((newsObject, idxOfNewsObject) => {
+            const elementToDisplay = <News key = {idxOfNewsObject}
+            news = {newsObject}/>
+            this.tabOfElementsToDisplay.push(elementToDisplay);
+        })
+    }
     render(){
-        let tabOfElementsToDisplay = [];
-        const divideNewsBetweenTilts = (arrayOfNewsObjects) => {
-            arrayOfNewsObjects.forEach((newsObject, idxOfNewsObject) => {
-                const elementToDisplay = <News key = {idxOfNewsObject} news = {newsObject}/>
-                tabOfElementsToDisplay.push(elementToDisplay);
-            })
-        }
         if (this.props.news && this.props.news.length > 1) {
-            divideNewsBetweenTilts(this.props.news)
-        } else if (this.props.news.length===0) {
-           tabOfElementsToDisplay=[
-            <div key="0">sorry, something went wrong</div>,
-           ]
+            this.divideNewsBetweenTilts(this.props.news)
+        } else {
+            this.nothingToDisplay(this.props.conditions);
         }
         return(
             <div style={styleForContainerOfNews}>
-                {tabOfElementsToDisplay}
+                {this.tabOfElementsToDisplay}
             </div>
         );
     }
