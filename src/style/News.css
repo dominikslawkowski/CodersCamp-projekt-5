@@ -1,0 +1,63 @@
+.Tile{
+  transition: ease-in-out 0.2s;
+  width: 30vw;
+  height: 19vw;
+  font-size: 1.7vw; 
+  border-style: double;
+  border-width: thick;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.imgNews{  
+  display: block;
+  position: absolute;
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.titleNews{
+  opacity: 0;
+  position: relative;
+  font-size: 1.3em;
+  text-align: center;
+  z-index: 2;
+  color: rgb(71, 71, 71);
+  text-shadow: 0 0 0.2em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
+}
+
+.descriptionNews{
+  opacity: 0;
+  position: relative;
+  font-size: 1em;
+  z-index: 2;
+  color: rgb(58, 58, 58);
+  text-shadow: 0 0 0.2em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
+}
+
+.Tile:hover{  
+  transition: 0.1s ease-in-out 0.2s;
+  cursor: pointer;
+  width: 35.5vw;
+}
+
+.Tile:hover .descriptionNews{
+  transition: 0.1s ease-in-out 0.3s;
+  opacity: 1;
+}
+
+.Tile:hover .titleNews{
+  transition: 0.1s ease-in-out 0.3s;
+  opacity: 1;
+}
+
+.Tile:hover .imgNews{
+  transition: 0.1s ease-in-out 0.2s;
+  opacity: 0.7;
+}
