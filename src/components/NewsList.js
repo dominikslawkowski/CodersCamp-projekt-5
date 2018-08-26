@@ -10,24 +10,24 @@ const styleForContainerOfNews = {
 }
 
 export class NewsList extends React.Component{
-    constructor(props){
-        super(props);
-        this.tabOfElementsToDisplay = []
-    }
-    componentWillUpdate(){
-        this.tabOfElementsToDisplay=[];
-    }
     render(){
+        let tabOfElementsToDisplay = [];
         const divideNewsBetweenTilts = (arrayOfNewsObjects) => {
             arrayOfNewsObjects.forEach((newsObject, idxOfNewsObject) => {
                 const elementToDisplay = <News key = {idxOfNewsObject} news = {newsObject}/>
-                this.tabOfElementsToDisplay.push(elementToDisplay);
+                tabOfElementsToDisplay.push(elementToDisplay);
             })
         }
-        divideNewsBetweenTilts(this.props.news)
+        if (this.props.news && this.props.news.length > 1) {
+            divideNewsBetweenTilts(this.props.news)
+        } else if (this.props.news.length===0) {
+           tabOfElementsToDisplay=[
+            <div key="0">sorry, something went wrong</div>,
+           ]
+        }
         return(
             <div style={styleForContainerOfNews}>
-                {this.tabOfElementsToDisplay}
+                {tabOfElementsToDisplay}
             </div>
         );
     }
