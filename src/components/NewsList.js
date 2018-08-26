@@ -20,7 +20,7 @@ export class NewsList extends React.Component{
         const nothing = 
         <div key="nothing">
             <h3>You have searcherd for </h3> 
-            <h2> {conditions} {terms}</h2> 
+            <h2>{conditions} {terms}</h2> 
             <p>Sorry, there is nothing to display
             under such conditions of searching.</p> 
         </div>
