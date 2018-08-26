@@ -15,12 +15,12 @@ export class NewsList extends React.Component{
         super(props),
         this.tabOfElementsToDisplay=[];
     }
-    nothingToDisplay = (conditions) => {
+    nothingToDisplay = (conditions, terms) => {
         this.tabOfElementsToDisplay = [];
         const nothing = 
         <div key="nothing">
             <h3>You have searcherd for </h3> 
-            <h2> {conditions} </h2> 
+            <h2> {conditions} {terms}</h2> 
             <p>Sorry, there is nothing to display
             under such conditions of searching.</p> 
         </div>
@@ -38,7 +38,7 @@ export class NewsList extends React.Component{
         if (this.props.news && this.props.news.length > 1) {
             this.divideNewsBetweenTilts(this.props.news)
         } else {
-            this.nothingToDisplay(this.props.conditions);
+            this.nothingToDisplay(this.props.conditions, this.props.terms);
         }
         return(
             <div style={styleForContainerOfNews}>

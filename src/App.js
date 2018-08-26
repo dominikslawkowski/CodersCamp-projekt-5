@@ -57,7 +57,8 @@ class App extends Component {
       <div className="App">
         <SearchBar onSearchTermChange={this.newsSearch}/>
         <Category categories={this.state.categories} categoryClicked={this.newsSearch}/>
-        <NewsList news={this.state.news} conditions={this.state.searchTerm}/>
+        <NewsList news={this.state.news} conditions={this.state.searchTerm}
+        terms={this.state.theme}/>
         <Footer/>   
       </div>
     );
