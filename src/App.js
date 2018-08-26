@@ -5,7 +5,7 @@ import './App.css';
 import Welcome from './components/Welcome';
 import SearchBar from './components/SearchBar';
 import Category from './components/Category';
-import {NewsList} from './components/NewsList';
+import NewsList from './components/NewsList';
 
 //Klucz potrzebny do pobrania danych z api o wiadomosciach
 const API_KEY = 'ed223602c98d443ba7817403c977218d';
@@ -38,7 +38,6 @@ class App extends Component {
   }
   
   render() {
-    
     return (
       <div className="App">
         <Welcome onClickChooseNews={this.newsSearch}/>

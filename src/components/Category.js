@@ -13,7 +13,12 @@ class Category extends Component {
       <div className = "category">
           <div className = "category-list">
              {categories.map((category,index) => (
-               <div key={index} className="category-element" onClick={() => this.props.categoryClicked(category, '')}>{category}</div>
+               <div 
+               key={index} 
+               className="category-element" 
+               onClick={() => this.props.categoryClicked(category, '')}>
+               {category}
+               </div>
               ))}
         </div>
       </div>

@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import '../style/Welcome.css';
 
 class Welcome extends Component {
-   
-    
     constructor(props){
         super(props)
 
@@ -20,9 +18,6 @@ class Welcome extends Component {
     chooseCattegory(e){
         var value = e.target.innerHTML;
         this.setState({term: e.currentTarget.innerHTML}, this.handleSubmit(value));
-
-              
-
   }
 
     render(){
