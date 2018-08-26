@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import '../style/Welcome.css';
 
 class Welcome extends Component {
+<<<<<<< HEAD
+=======
+   
+>>>>>>> maciek
     constructor(props){
         super(props)
 
@@ -12,13 +16,17 @@ class Welcome extends Component {
 
     handleSubmit(txt){
         this.props.onClickChooseNews(txt, '');
+        this.props.changeState();
     }
-    
     
     chooseCattegory(e){
         var value = e.target.innerHTML;
         this.setState({term: e.currentTarget.innerHTML}, this.handleSubmit(value));
+<<<<<<< HEAD
   }
+=======
+    }
+>>>>>>> maciek
 
     render(){
         return (
@@ -38,7 +46,6 @@ class Welcome extends Component {
            </div>     
         )
     }
-
 }
 
 export default Welcome;
