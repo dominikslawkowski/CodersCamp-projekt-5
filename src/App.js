@@ -5,12 +5,8 @@ import './App.css';
 import Welcome from './components/Welcome';
 import SearchBar from './components/SearchBar';
 import Category from './components/Category';
-<<<<<<< HEAD
-import NewsList from './components/NewsList';
-=======
 import {NewsList} from './components/NewsList';
 import {Footer} from './components/Footer';
->>>>>>> maciek
 
 //Klucz potrzebny do pobrania danych z api o wiadomosciach
 const API_KEY = 'ed223602c98d443ba7817403c977218d';

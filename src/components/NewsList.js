@@ -12,7 +12,7 @@ const styleForContainerOfNews = {
 
 export class NewsList extends React.Component{
     constructor(props){
-        super(props),
+        super(props);
         this.tabOfElementsToDisplay=[];
     }
     nothingToDisplay = (conditions, terms) => {
