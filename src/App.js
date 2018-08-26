@@ -23,7 +23,6 @@ class App extends Component {
       theme: '',
       news: [],
       searchTerm: '',
-      categories: ['business', 'general', 'health', 'science', 'sports', 'technology'],
 
 
       //do wyrrzucenia element bedzie przekazywany do kafelka w NewsLIst na razie tylko do wglądu
@@ -72,7 +71,7 @@ class App extends Component {
         <Welcome onClickChooseNews={this.newsSearch}/>
         <SearchBar onSearchTermChange={this.newsSearch}/>
 
-        <Category categories={this.state.categories} categoryClicked={this.newsSearch}/>
+        <Category categoryClicked={this.newsSearch}/>
 
         {/* te elementy też do wyrzucenia */}
         <News news={this.state.dupa}/>
