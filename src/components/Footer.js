@@ -55,7 +55,7 @@ export class Footer extends React.Component {
                         <p>Arkadiusz Klusa</p>
                         <p>responsibility:</p>
                         <p>Welcome component, data flow</p>
-                        <div style={personalButton}><a target="_blank" className='personalLink' href='https://github.com/Aklusa'>Do You want more?</a></div>
+                        <div style={personalButton}><a target="_blank" className='personalLink' href='https://github.com/Aklusa'>Do You like it?</a></div>
                     </li>
                     <li style={personalListItem}>
                         <p>Imię nazwisko</p>
