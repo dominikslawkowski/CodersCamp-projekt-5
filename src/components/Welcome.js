@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../style/Welcome.css';
 
+
 class Welcome extends Component {
    
     constructor(props){
