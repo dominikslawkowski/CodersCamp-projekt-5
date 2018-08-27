@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../style/News.css'
 const News = ({news}) => {
   
-
   const imgURL = news.urlToImage;
   const description = news.description;
   const title = news.title;

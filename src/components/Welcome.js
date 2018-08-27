@@ -24,7 +24,15 @@ class Welcome extends Component {
     render(){
         return (
            <div className="welcome-container"> 
-           <p className="welcome-inscription">What news do You prefer?</p>
+           <p className="welcome-inscription">
+            <span className="title1">
+                <span className="word1">What</span> 
+                <span className="word2"> news</span>
+            </span> 
+                <span className="word3"> do</span>
+                <span className="word4"> You</span> 
+                <span className="word5"> prefer?</span>
+            </p>
             <div className="welcome-categories-wrapper">
                 <ul className="welcome">
                  {this.state.categories.map((name, i)=>{

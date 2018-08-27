@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
 import _ from 'lodash';
-
-//importy komponentów
 import Welcome from './components/Welcome';
 import SearchBar from './components/SearchBar';
 import Category from './components/Category';
 import {NewsList} from './components/NewsList';
 import {Footer} from './components/Footer';
 
-//Klucz potrzebny do pobrania danych z api o wiadomosciach
 const API_KEY = 'ed223602c98d443ba7817403c977218d';
 
 class App extends Component {
-  
-  //ustawienie state dla klasy App - temat wyszukiwanych wiadomosci i tablie z newsami
+
   constructor(props) {
     super(props);
     this.state = {
@@ -56,9 +51,11 @@ class App extends Component {
       :
       <div className="App">
         <SearchBar onSearchTermChange={_.debounce(this.newsSearch,500)}/>
-        <Category categories={this.state.categories} categoryClicked={this.newsSearch}/>
-        <NewsList news={this.state.news} conditions={this.state.searchTerm}
-        terms={this.state.theme}/>
+          <Category categories={this.state.categories} categoryClicked={this.newsSearch}/>
+          <NewsList 
+            news={this.state.news} 
+            conditions={this.state.searchTerm}
+            terms={this.state.theme}/>
         <Footer/>   
       </div>
     );
