@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import _ from 'lodash';
 
 //importy komponentów
 import Welcome from './components/Welcome';
@@ -54,7 +55,7 @@ class App extends Component {
       </div>
       :
       <div className="App">
-        <SearchBar onSearchTermChange={this.newsSearch}/>
+        <SearchBar onSearchTermChange={_.debounce(this.newsSearch,500)}/>
         <Category categories={this.state.categories} categoryClicked={this.newsSearch}/>
         <NewsList news={this.state.news} conditions={this.state.searchTerm}
         terms={this.state.theme}/>
