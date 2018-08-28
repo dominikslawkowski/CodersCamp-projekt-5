@@ -18,7 +18,7 @@ class App extends Component {
       news: [],
       searchTerm: '',
       savedNews: [],
-      country: 'us',
+      country: 'en',
       initial: true
     };
     this.changeState = this.changeState.bind(this);
@@ -32,7 +32,7 @@ class App extends Component {
   }
 
   newsSearch(term, search, country) {
-    const url = `https://newsapi.org/v2/top-headlines?pageSize=60&country=${country}&q=${search}&category=${term}&apiKey=${API_KEY}`;
+    const url = `https://newsapi.org/v2/everything?pageSize=50&language=${country}&q=${term}&apiKey=${API_KEY}`;
 
     fetch(url)
       .then(data => data.json())
@@ -40,10 +40,7 @@ class App extends Component {
         theme: term,
         news: data.articles,
         searchTerm: search
-      }))
-      .then(() => console.log(this.state.news))
-      .then(() => console.log(term))
-      .then(() => console.log(search))
+      }));
   }
   
   render() {

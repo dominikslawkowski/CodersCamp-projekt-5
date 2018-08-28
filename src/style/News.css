@@ -10,7 +10,6 @@
   transition: ease-in-out 0.2s;
   margin: 5px;
   cursor: pointer;
-  border: 1px solid #9eb3ff;
   animation: tile-move .5s ease-in-out;
 }
 
@@ -56,10 +55,6 @@
   cursor: pointer;
   filter: brightness(1.1);
   animation: rotate .3s ease-in-out forwards;
-}
-
-.Tile:hover{
-  background-color: #9eb3ff38;
 }
 
 @keyframes rotate{

@@ -18,7 +18,7 @@ class NewsList extends React.Component {
     nothingToDisplay = (conditions, terms) => {
         this.tabOfElementsToDisplay = [];
         const nothing = 
-            <div className="loading">
+            <div className="loading" key="terms">
                 <span className="dot dot1"></span>
                 <span className="dot dot2"></span>
                 <span className="dot dot3"></span>
