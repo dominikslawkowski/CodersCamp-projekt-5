@@ -16,7 +16,7 @@ class App extends Component {
       theme: '',
       news: [],
       searchTerm: '',
-      initial: false
+      initial: true
     };
     this.changeState = this.changeState.bind(this);
     this.newsSearch = this.newsSearch.bind(this);
