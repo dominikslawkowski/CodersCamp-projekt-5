@@ -1,14 +1,17 @@
 .Tile{
-  transition: ease-in-out 0.2s;
-  width: 30vw;
-  height: 19vw;
+  width: 27vw;
+  height: 18vw;
   font-size: 1.7vw; 
-  border-style: double;
-  border-width: thick;
   display: inline-block;
   position: relative;
   overflow: hidden;
   flex-direction: column;
+  border-radius: 20px;
+  transition: ease-in-out 0.2s;
+  margin: 5px;
+  cursor: pointer;
+  border: 1px solid #9eb3ff;
+  animation: tile-move .5s ease-in-out;
 }
 
 .imgNews{  
@@ -20,44 +23,144 @@
   width: 100%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  opacity: .7;
+  transition: all .5s ease-in-out;
 }
 
 .titleNews{
+  position: absolute;
+  font-size: 30px;
+  padding: 10px;
+  text-align: left;
   opacity: 0;
-  position: relative;
-  font-size: 1.3em;
-  text-align: center;
   z-index: 2;
-  color: rgb(71, 71, 71);
-  text-shadow: 0 0 0.2em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
+  color: #9eb3ff;
+  border-bottom: 1px solid #9eb3ff;
+  text-shadow:  1px 1px black;
 }
 
 .descriptionNews{
+  position: absolute;
+  bottom: 10px;
   opacity: 0;
-  position: relative;
-  font-size: 1em;
+  font-size: 20px;
+  padding: 10px;
   z-index: 2;
-  color: rgb(58, 58, 58);
-  text-shadow: 0 0 0.2em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
-}
-
-.Tile:hover{  
-  transition: 0.1s ease-in-out 0.2s;
-  cursor: pointer;
-  width: 35.5vw;
-}
-
-.Tile:hover .descriptionNews{
-  transition: 0.1s ease-in-out 0.3s;
-  opacity: 1;
-}
-
-.Tile:hover .titleNews{
-  transition: 0.1s ease-in-out 0.3s;
-  opacity: 1;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.253);
+  transition: all .5s ease-in-out;
 }
 
 .Tile:hover .imgNews{
-  transition: 0.1s ease-in-out 0.2s;
-  opacity: 0.7;
+  cursor: pointer;
+  filter: brightness(1.1);
+  animation: rotate .3s ease-in-out forwards;
+}
+
+.Tile:hover{
+  background-color: #9eb3ff38;
+}
+
+@keyframes rotate{
+  to{
+    transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+}
+
+.Tile:hover > .titleNews{
+  opacity: 1;
+}
+
+.Tile:hover > .descriptionNews{
+  opacity: 1;
+}
+
+@media screen and (max-width: 1700px) {
+  .titleNews{
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+   .Tile {
+     width: 40vw;
+     height: 25vw;
+   }
+
+   .titleNews{
+     font-size: 18px;
+   }
+}
+
+@media screen and (max-width: 1000px) {
+     .Tile {
+     width: 70vw;
+     height: 40vw;
+     margin-bottom: 10px;
+   }
+
+   .titleNews{
+     font-size: 20px;
+   }
+}
+
+.loading {
+  height: 100vh;
+  width: 100vw;
+  color: #9eb3ff;
+  text-align: center;
+  font-size: 80px;
+  margin-top: 200px;
+}
+
+@keyframes tile-move{
+  from{
+    opacity: 0;
+  }
+}
+
+@keyframes dot-move {
+  0% {
+    transform: translateY(0);
+  }
+
+  25%{
+    transform: translateY(20px);
+  }
+  50% {  
+    transform: translateY(0);
+  }
+
+  75%{
+    transform: translateY(-20px)
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.dot{
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  display: inline-block;
+  background-color: #9eb3ff;
+  border-radius: 50%;
+  animation: dot-move 1s infinite linear
+  ;
+}
+
+.dot1{
+  animation-delay: 0;
+}
+
+.dot2{
+  animation-delay: .2s;
+}
+
+.dot3{
+  animation-delay: .4s;
 }

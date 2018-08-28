@@ -14,7 +14,7 @@ class SearchBar extends Component {
     render() {
         return (
             <div className='searchBar'>
-                <FontAwesomeIcon icon={faSearch} size="2x" color="rgba(255,255,255,0.7)"/>
+                <FontAwesomeIcon icon={faSearch} size="1x" color="#9eb3ff"/>
                 <input className='searchBarInput'
                 placeholder='Search...'
                 value={this.state.searchTerm}
@@ -28,8 +28,7 @@ class SearchBar extends Component {
 
     onInputChange(searchTerm) {
         this.setState({searchTerm});
-        this.props.onSearchTermChange('',searchTerm);
-    
+        this.props.onSearchTermChange('',searchTerm, this.props.country);
     }
 }
 

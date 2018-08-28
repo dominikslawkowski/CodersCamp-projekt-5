@@ -4,10 +4,6 @@ import "../style/Category.css";
 const categories = ['business', 'general', 'health', 'science', 'sports', 'technology'];
 
 class Category extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
   render() {
     return (
       <div className = "category">
@@ -15,8 +11,8 @@ class Category extends Component {
              {categories.map((category,index) => (
                <div 
                key={index} 
-               className="category-element" 
-               onClick={() => this.props.categoryClicked(category, '')}>
+               className={`category-element category-element-${index}`} 
+               onClick={() => this.props.categoryClicked(category, '', this.props.country)}>
                {category}
                </div>
               ))}

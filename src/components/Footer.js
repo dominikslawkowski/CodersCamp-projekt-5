@@ -1,24 +1,26 @@
 import React from 'react';
 import './../style/Footer.css';
 const footerStyle = {
-    background: '#333',
+    background: 'black',
     padding: '10vh 0',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    color: 'white'
+    color: '#9eb3ff'
 }
 const teamList = {
-    listStyle: 'none'
+    width: '40vw',
+    listStyle: 'none',
 }
 const personalListItem = {
     borderBottom: 'solid 1px white',
     borderLeft: 'solid 1px white',
-    marginBottom: '10px',
+    marginBottom: '20px',
     paddingBottom: '6px',
     paddingLeft: '6px',
+    width: '40vw',
     borderBottomLeftRadius: '6px'
 }
 const personalButton = {
@@ -34,7 +36,7 @@ const personalButton = {
     borderBottomLeftRadius: '7px'
 }
 
-export class Footer extends React.Component {
+export default class Footer extends React.Component {
     render(){
         return(
             <footer style={footerStyle}>
@@ -49,7 +51,7 @@ export class Footer extends React.Component {
                         <p>Dominik Sławkowski</p>
                         <p>responsibility:</p>
                         <p>Team Mentor, project configuration, API, project management</p>
-                        <div style={personalButton}><a target="_blank" className='personalLink' href='#'>See my repo</a></div>
+                        <div style={personalButton}><a target="_blank" className='personalLink' href='www.github.com/dominikslawkowski'>See my repo</a></div>
                     </li>
                     <li style={personalListItem}>
                         <p>Arkadiusz Klusa</p>

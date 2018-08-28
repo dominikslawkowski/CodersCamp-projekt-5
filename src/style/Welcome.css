@@ -1,13 +1,10 @@
-  @import url('https://fonts.googleapis.com/css?family=Metamorphous|Roboto:400,700&amp;subset=latin-ext');
-
-
   .welcome-container {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     min-height: 500px;
     min-width: 320px;
@@ -17,89 +14,201 @@
   }
   
   .welcome-inscription{
-    text-align: center;
-    text-decoration: underline;
     margin: 0;
-    text-underline-position: under;
     color: #9eb3ff;
-    font-size: 4em;
+    font-size: 50px;
     letter-spacing: 5px;
-    margin-bottom: 2%;
+    margin-bottom: 10px;
+    text-align: center;
   }
   
   .welcome-category:hover {
-    color: #949fc7;
-    background-color: #000;
+    color: white;
+    background-color: transparent;
+    border-color: white;
     cursor: pointer;
   }
   
   .welcome-category {
-    width: calc(25% - 6px);
-    height: auto;
-    min-width: 150px;
-    min-height: 25px;
-    padding: 0.5%;
-    margin: 2%;
+    height: 30px;
+    width: 200px;
+    margin: 10px;
+    padding: 0 10px;
+    padding-bottom: 10px;
     display:inline-block;
     text-align: center;
-    background-color: #949fc7;
+    font-weight: 400;
     border-radius: 30px;
-    border: 3px solid #949fc7;
+    border: 1px solid #9eb3ff;
+    color: #9eb3ff;
+    animation: category-move .5s 1.05s ease-in-out forwards;
+    opacity: 0;
+    transition: all .3s ease-in-out;
   }
 
-  .welcome-category-name{
-    margin-top: 1%;
-  }
-  
   .welcome {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    justify-content: center;
+    justify-items: center;
     text-align: center;
     list-style-type: none;
     font-size: 1.25em;
     padding:0;
-    margin:0;
-    height: 20vh;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
   }
   
 
   .welcome-categories-wrapper{
-    width: 50vw;
+    width: 100vw;
     height: 20vh;
   }
-  
-  @media only screen and (max-width: 1100px){
 
+  @media screen and (max-width: 756px){
     .welcome-inscription{
-      font-size: 3em;
-    }
-    .welcome-inscription{
-      margin: 0 10vw 50px 10vw;
+      font-size: 40px;
     }
 
-  }
+    .welcome-category{
+      height: 25px;
+      width: 150px;
+      font-size: 20px;
+    }
 
-  @media only screen and (max-width: 900px){
+    .welcome{
+      grid-template-columns: repeat(2, 200px);
+    }
 
+    .word1{
+      width: 45%;
+      text-align: right;
+    }
     
-  }
-
-  @media only screen and (max-width: 700px){
-
-    .welcome-inscription{
-      margin: 15vh 10vw 50px 10vw;
-    }
-
-    .welcome-container{
-      justify-content: flex-start;
+    .word2 {
+      width: 45%;
+      text-align: left;
     }
 
   }
-
-  @media only screen and (max-width: 700px){
-
-    .welcome-inscription{
-      font-size: 2.5em;
+  
+  @keyframes move {
+    0%{
+      transform: translateY(-100px);
+      opacity: .5;
     }
-
+    50%{
+      transform: translateY(20px)
+    }
+    80%{
+      transform: translateY(10px);
+    }
+    90%{
+      transform: translateY(5px);
+    }
+    100%{
+      transform: translateY(0px);
+    }
   }
 
+  @keyframes show{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  .welcome-container span{
+     display: inline-block;
+     margin: 5px;
+     animation-fill-mode: forwards;
+     animation-timing-function: linear;
+     animation-name: show;
+     animation-duration: .05s;
+     opacity: 0;
+  }
+
+  .word1{
+    animation-delay: .2s;
+  }
+
+  .word2 {
+   animation-delay: .4s;
+  }
+
+  .word3 {
+   animation-delay: .6s;
+  }
+
+  .word4 {
+    animation-delay: .8s;
+  }
+
+  .word5 {
+    animation-delay: 1s;
+  }
+
+  @keyframes category-move{
+    0%{
+      opacity: 0;
+      filter: brightness(2);
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+  .element-0{
+    animation-delay: 1.05s;
+  }
+
+  .element-1 {
+    animation-delay: 1.15s;
+  }
+
+  .element-2 {
+    animation-delay: 1.25s;
+  }
+
+  .element-3 {
+    animation-delay: 1.15s;
+  }
+
+  .element-4 {
+    animation-delay: 1.25s;
+  }
+
+  .element-5 {
+    animation-delay: 1.35s;
+  }
+
+  .element-0:hover{
+    color: rgb(252, 211, 30);
+    border-color: rgb(252, 211, 30);
+  }
+
+  .element-1:hover {
+    color: rgb(255, 0, 0);
+    border-color: rgb(255, 0, 0);
+  }
+
+  .element-2:hover {
+    color: rgb(61, 216, 255);
+    border-color: rgb(61, 216, 255);
+  }
+
+  .element-3:hover {
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+  }
+
+  .element-4:hover {
+    color: rgb(174, 53, 255);
+    border-color: rgb(174, 53, 255);
+  }
+
+  .element-5:hover {
+    color: rgb(9, 255, 0);
+    border-color: rgb(9, 255, 0);
+  }
