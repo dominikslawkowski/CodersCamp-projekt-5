@@ -33,6 +33,7 @@
   font-size: 30px;
   padding: 10px;
   text-align: left;
+  opacity: 0;
   z-index: 2;
   color: #9eb3ff;
   text-shadow:  1px 1px black;
@@ -52,6 +53,10 @@
 .Tile:hover{  
   cursor: pointer;
   filter: brightness(1.1);
+}
+
+.Tile:hover > .titleNews{
+  opacity: 1;
 }
 
 .Tile:hover > .descriptionNews{
