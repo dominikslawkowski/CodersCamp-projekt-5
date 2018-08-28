@@ -1,24 +1,26 @@
 import React from 'react';
 import './../style/Footer.css';
 const footerStyle = {
-    background: '#333',
+    background: 'black',
     padding: '10vh 0',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    color: 'white'
+    color: '#9eb3ff'
 }
 const teamList = {
-    listStyle: 'none'
+    width: '40vw',
+    listStyle: 'none',
 }
 const personalListItem = {
     borderBottom: 'solid 1px white',
     borderLeft: 'solid 1px white',
-    marginBottom: '10px',
+    marginBottom: '20px',
     paddingBottom: '6px',
     paddingLeft: '6px',
+    width: '40vw',
     borderBottomLeftRadius: '6px'
 }
 const personalButton = {

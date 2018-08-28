@@ -25,10 +25,8 @@ class Welcome extends Component {
         return (
            <div className="welcome-container"> 
            <p className="welcome-inscription">
-            <span className="title1">
                 <span className="word1">What</span> 
                 <span className="word2"> news</span>
-            </span> 
                 <span className="word3"> do</span>
                 <span className="word4"> You</span> 
                 <span className="word5"> prefer?</span>

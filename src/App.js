@@ -6,7 +6,7 @@ import Category from './components/Category';
 import {NewsList} from './components/NewsList';
 import {Footer} from './components/Footer';
 
-const API_KEY = 'ed223602c98d443ba7817403c977218d';
+const API_KEY = 'aabf6ff51a5c42ffaec96e55c6af6297';
 
 class App extends Component {
 
@@ -16,7 +16,7 @@ class App extends Component {
       theme: '',
       news: [],
       searchTerm: '',
-      initial: true
+      initial: false
     };
     this.changeState = this.changeState.bind(this);
     this.newsSearch = this.newsSearch.bind(this);
@@ -30,7 +30,9 @@ class App extends Component {
   }
 
   newsSearch(term, search) {
-    fetch(`https://newsapi.org/v2/top-headlines?language=en&q=${search}&category=${term}&apiKey=${API_KEY}`)
+    const url = `https://newsapi.org/v2/top-headlines?pageSize=60&country=us&q=${search}&category=${term}&apiKey=${API_KEY}`;
+
+    fetch(url)
       .then(data => data.json())
       .then(data => this.setState({
         theme: term,

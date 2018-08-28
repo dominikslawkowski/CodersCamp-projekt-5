@@ -19,8 +19,8 @@
   }
   
   .welcome-category:hover {
-    color: black;
-    background-color: rgb(255, 255, 255);
+    color: white;
+    background-color: transparent;
     border-color: white;
     cursor: pointer;
   }
@@ -33,10 +33,12 @@
     padding-bottom: 10px;
     display:inline-block;
     text-align: center;
-    background-color: #949fc7;
+    font-weight: 400;
     border-radius: 30px;
-    border: 3px solid #949fc7;
-    animation: category-move .5s ease-in-out;
+    border: 1px solid #9eb3ff;
+    color: #9eb3ff;
+    animation: category-move .5s 1.05s ease-in-out forwards;
+    opacity: 0;
     transition: all .3s ease-in-out;
   }
 
@@ -63,7 +65,7 @@
     }
 
     .welcome-category{
-      height: 20px;
+      height: 25px;
       width: 150px;
       font-size: 20px;
     }
@@ -72,9 +74,16 @@
       grid-template-columns: repeat(2, 200px);
     }
 
-    .title1{
-      display: block;
+    .word1{
+      width: 45%;
+      text-align: right;
     }
+    
+    .word2 {
+      width: 45%;
+      text-align: left;
+    }
+
   }
   
   @keyframes move {
@@ -96,35 +105,50 @@
     }
   }
 
-  .welcome-inscription > span,
-  .title1 > span {
-    display: inline-block;
-    margin: 3px;
-    animation-timing-function: linear;
+  @keyframes show{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  .welcome-container span{
+     display: inline-block;
+     margin: 5px;
+     animation-fill-mode: forwards;
+     animation-timing-function: linear;
+     animation-name: show;
+     animation-duration: .05s;
+     opacity: 0;
   }
 
   .word1{
-    animation: move .4s;
+    animation-delay: .2s;
   }
 
   .word2 {
-    animation: move .8s;
+   animation-delay: .4s;
   }
 
   .word3 {
-    animation: move 1.2s;
+   animation-delay: .6s;
   }
 
   .word4 {
-    animation: move 1.6s;
+    animation-delay: .8s;
   }
 
   .word5 {
-    animation: move 2s;
+    animation-delay: 1s;
   }
 
   @keyframes category-move{
-    from{
-      opacity: .6;
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
     }
   }

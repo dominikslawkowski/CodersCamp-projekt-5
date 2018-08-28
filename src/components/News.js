@@ -10,7 +10,7 @@ const News = ({news}) => {
 
   return( 
     <div onClick={() => {window.open(urlToPage, "_blank");}} className="Tile">
-      <img className="imgNews" src={imgURL} />      
+      <img className="imgNews" src={imgURL} height="100%" width="100%" />      
       <div className="titleNews">{title}</div>
       <div className="descriptionNews">{description}</div>      
     </div>

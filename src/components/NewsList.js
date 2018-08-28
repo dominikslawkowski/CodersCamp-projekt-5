@@ -36,7 +36,7 @@ export class NewsList extends React.Component{
     }
     render(){
         if (this.props.news && this.props.news.length > 1) {
-            this.divideNewsBetweenTilts(this.props.news)
+            this.divideNewsBetweenTilts(this.props.news);
         } else {
             this.nothingToDisplay(this.props.conditions, this.props.terms);
         }

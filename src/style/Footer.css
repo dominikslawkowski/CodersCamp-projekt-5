@@ -1,3 +1,7 @@
+footer{
+    border-top: solid 2px #9eb3ff;
+}
+
 a.personalLink {
   display: flex;
   align-items: center;

@@ -13,7 +13,7 @@ class SearchBar extends Component {
     render() {
         return (
             <div className='searchBar'>
-                <FontAwesomeIcon icon={faSearch} size="2x" color="rgba(255,255,255,0.7)"/>
+                <FontAwesomeIcon icon={faSearch} size="1x" color="#9eb3ff"/>
                 <input className='searchBarInput'
                 placeholder='Search...'
                 value={this.state.searchTerm}
