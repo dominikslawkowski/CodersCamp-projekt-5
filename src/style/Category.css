@@ -21,6 +21,7 @@
     margin-bottom: 15px;
     border-radius: 30px;
     cursor: pointer;
+    transition: all .1s ease-in-out;
 }
 
 .category-element:hover {
@@ -54,3 +55,33 @@
      font-size: 20px;
    }
 }
+
+  .category-element-0:hover{
+    color: rgb(252, 211, 30);
+    border-color: rgb(252, 211, 30);
+  }
+
+  .category-element-1:hover {
+    color: rgb(255, 0, 0);
+    border-color: rgb(255, 0, 0);
+  }
+
+  .category-element-2:hover {
+    color: rgb(61, 216, 255);
+    border-color: rgb(61, 216, 255);
+  }
+
+  .category-element-3:hover {
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+  }
+
+  .category-element-4:hover {
+    color: rgb(174, 53, 255);
+    border-color: rgb(174, 53, 255);
+  }
+
+  .category-element-5:hover {
+    color: rgb(9, 255, 0);
+    border-color: rgb(9, 255, 0);
+  }

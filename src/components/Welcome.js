@@ -12,7 +12,7 @@ class Welcome extends Component {
     }
 
     handleSubmit(txt){
-        this.props.onClickChooseNews(txt, '');
+        this.props.onClickChooseNews(txt, '', this.props.country);
         this.props.changeState();
     }
     
@@ -35,10 +35,11 @@ class Welcome extends Component {
                 <ul className="welcome">
                  {this.state.categories.map((name, i)=>{
                     return <li 
-                            className="welcome-category"
+                            className={`welcome-category element-${i}`}
                             key={i}
                             onClick = {e => this.chooseCattegory(e)}
-                            myvalue={name}>{name}</li>
+                            myvalue={name}>{name}
+                           </li>
                  })}
                 </ul>
             </div>

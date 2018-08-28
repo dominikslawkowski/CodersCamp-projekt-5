@@ -3,7 +3,7 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     font-size: 16px;
     background-color: #000;
@@ -147,8 +147,63 @@
   @keyframes category-move{
     0%{
       opacity: 0;
+      filter: brightness(2);
     }
     100%{
       opacity: 1;
     }
+  }
+
+  .element-0{
+    animation-delay: 1.05s;
+  }
+
+  .element-1 {
+    animation-delay: 1.15s;
+  }
+
+  .element-2 {
+    animation-delay: 1.25s;
+  }
+
+  .element-3 {
+    animation-delay: 1.15s;
+  }
+
+  .element-4 {
+    animation-delay: 1.25s;
+  }
+
+  .element-5 {
+    animation-delay: 1.35s;
+  }
+
+  .element-0:hover{
+    color: rgb(252, 211, 30);
+    border-color: rgb(252, 211, 30);
+  }
+
+  .element-1:hover {
+    color: rgb(255, 0, 0);
+    border-color: rgb(255, 0, 0);
+  }
+
+  .element-2:hover {
+    color: rgb(61, 216, 255);
+    border-color: rgb(61, 216, 255);
+  }
+
+  .element-3:hover {
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+  }
+
+  .element-4:hover {
+    color: rgb(174, 53, 255);
+    border-color: rgb(174, 53, 255);
+  }
+
+  .element-5:hover {
+    color: rgb(9, 255, 0);
+    border-color: rgb(9, 255, 0);
   }

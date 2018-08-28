@@ -10,7 +10,7 @@ const styleForContainerOfNews = {
     overflow: 'hidden',
 }
 
-export class NewsList extends React.Component{
+class NewsList extends React.Component {
     constructor(props){
         super(props);
         this.tabOfElementsToDisplay=[];
@@ -18,28 +18,27 @@ export class NewsList extends React.Component{
     nothingToDisplay = (conditions, terms) => {
         this.tabOfElementsToDisplay = [];
         const nothing = 
-        <div key="nothing">
-            <h3>You have searcherd for </h3> 
-            <h2>{conditions} {terms}</h2> 
-            <p>Sorry, there is nothing to display
-            under such conditions of searching.</p> 
-        </div>
+            <div className="loading">
+                <span className="dot dot1"></span>
+                <span className="dot dot2"></span>
+                <span className="dot dot3"></span>
+            </div>
         this.tabOfElementsToDisplay.push(nothing);
     }
     divideNewsBetweenTilts = (arrayOfNewsObjects) => {
         this.tabOfElementsToDisplay = [];
         arrayOfNewsObjects.forEach((newsObject, idxOfNewsObject) => {
-            const elementToDisplay = <News key = {idxOfNewsObject}
-            news = {newsObject}/>
+            const elementToDisplay = 
+                <News key = {idxOfNewsObject}
+                news = {newsObject}/>
             this.tabOfElementsToDisplay.push(elementToDisplay);
         })
     }
     render(){
-        if (this.props.news && this.props.news.length > 1) {
-            this.divideNewsBetweenTilts(this.props.news);
-        } else {
-            this.nothingToDisplay(this.props.conditions, this.props.terms);
-        }
+        (this.props.news && this.props.news.length > 1)?
+        this.divideNewsBetweenTilts(this.props.news):
+        this.nothingToDisplay(this.props.conditions, this.props.terms);
+
         return(
             <div style={styleForContainerOfNews}>
                 {this.tabOfElementsToDisplay}
