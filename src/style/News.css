@@ -2,16 +2,15 @@
   width: 27vw;
   height: 18vw;
   font-size: 1.7vw; 
-  border-style: double;
-  border-width: thick;
   display: inline-block;
   position: relative;
   overflow: hidden;
   flex-direction: column;
   border-radius: 20px;
-  padding: 5px;
   transition: ease-in-out 0.2s;
-
+  margin: 5px;
+  cursor: pointer;
+  border: 1px solid #9eb3ff;
   animation: tile-move .5s ease-in-out;
 }
 
@@ -25,7 +24,7 @@
   transform: translate(-50%, -50%);
   z-index: 1;
   opacity: .7;
-  border: solid 1px #9eb3ff;
+  transition: all .5s ease-in-out;
 }
 
 .titleNews{
@@ -36,6 +35,7 @@
   opacity: 0;
   z-index: 2;
   color: #9eb3ff;
+  border-bottom: 1px solid #9eb3ff;
   text-shadow:  1px 1px black;
 }
 
@@ -46,13 +46,27 @@
   font-size: 20px;
   padding: 10px;
   z-index: 2;
+  border-radius: 10px;
   color: white;
+  background-color: rgba(0, 0, 0, 0.253);
   transition: all .5s ease-in-out;
 }
 
-.Tile:hover{  
+.Tile:hover .imgNews{
   cursor: pointer;
   filter: brightness(1.1);
+  animation: rotate .3s ease-in-out forwards;
+}
+
+.Tile:hover{
+  background-color: #9eb3ff38;
+}
+
+@keyframes rotate{
+  to{
+    transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
 }
 
 .Tile:hover > .titleNews{
@@ -61,7 +75,6 @@
 
 .Tile:hover > .descriptionNews{
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.623);
 }
 
 @media screen and (max-width: 1700px) {
