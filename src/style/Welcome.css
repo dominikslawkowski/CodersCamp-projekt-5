@@ -64,6 +64,12 @@
   }
 
   @media screen and (max-width: 756px){
+
+    .welcome-container{
+      display: block;
+      margin-top: 180px;
+    }
+
     .welcome-inscription{
       font-size: 40px;
     }
@@ -72,6 +78,7 @@
       height: 25px;
       width: 150px;
       font-size: 20px;
+      padding-bottom: 15px;
     }
 
     .welcome{
@@ -90,6 +97,16 @@
 
   }
   
+@media screen and (max-width: 400px){
+    .welcome{
+      grid-template-columns: 200px;
+    }
+    .welcome-inscription {
+      font-size: 25px;
+    }
+
+  }
+
   @keyframes move {
     0%{
       transform: translateY(-100px);

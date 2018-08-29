@@ -11,7 +11,8 @@
 ::placeholder {
     color: #9eb3ff;
 }
-.searchBar .searchBarInput {
+
+.searchBarInput {
     box-sizing: border-box;
     border: none;
     border-bottom: solid 2px #9eb3ff;
@@ -25,3 +26,10 @@
     min-width: 300px;
 }
 
+
+@media (max-width: 400px) {
+    .searchBarInput{
+        min-width: 0;
+        width: 60vw;
+    }
+}

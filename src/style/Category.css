@@ -56,6 +56,12 @@
    }
 }
 
+@media screen and (max-width: 400px){
+  .category-list {
+    grid-template-columns: repeat(2, 140px);
+  }
+}
+
   .category-element-0:hover{
     color: rgb(252, 211, 30);
     border-color: rgb(252, 211, 30);
