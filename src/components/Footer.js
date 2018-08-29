@@ -78,10 +78,10 @@ export default class Footer extends React.Component {
                         <div style={personalButton}><a target="_blank" className='personalLink' href='https://github.com/maciej-bartynski'>How about this</a></div>
                     </li>
                     <li style={personalListItem}>
-                        <p>Imię nazwisko</p>
+                        <p>Krystian Marecki</p>
                         <p>responsibility:</p>
                         <p>News tilt component, API data displaying, cutting JSON to pieces, user experience</p>
-                        <div style={personalButton}><a className='personalLink' href='#' target="_blank">It is clickable, you know</a></div>
+                        <div style={personalButton}><a className='personalLink' href='https://github.com/Kryspinn' target="_blank">It is clickable, you know</a></div>
                     </li>
                 </ul>
             </footer>
