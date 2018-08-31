@@ -43,7 +43,7 @@ export const Category = styled.div`
     margin: 10px;
     padding: 10px;
     padding-bottom: 10px;
-    display:inline-block;
+    display: inline-block;
     text-align: center;
     font-weight: 400;
     border-radius: 30px;
@@ -101,4 +101,8 @@ export const Span = styled.span`
      animation-name: show;
      animation-duration: .05s;
      opacity: 0;
+
+     .word1:hover{
+        
+     }
 `;

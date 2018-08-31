@@ -4,7 +4,7 @@ import Welcome from './components/Welcome/index';
 import SearchBar from './components/SearchBar';
 import Category from './components/Category';
 import NewsList from './components/NewsList';
-import Footer from './components/Footer';
+import Footer from './components/Footer/index';
 // import Menu from './components/Menu';
 
 const API_KEY = 'aabf6ff51a5c42ffaec96e55c6af6297';
