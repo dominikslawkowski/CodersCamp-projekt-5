@@ -1,23 +1,25 @@
 import React, {Component} from 'react';
-import '../../style/Welcome.css';
+import {categoryColors, categories} from '../consts';
 import {
         Container, 
         CategoriesWrapper, 
         Inscription, 
         ListCategory,
         Span,
+        SpanLeft,
+        SpanRight,
         Category
        } from './style';
-import '../../style/Welcome.css';
+
+const categoryDisplayDelay = ['1.05s', '1.15s', '1.25s', '1.15s', '1.25s', '1.35s'];
+const wordDisplayDelay = ['.2s', '.4s', '.6s', '.8s', '1s'];
 
 class Welcome extends Component {
-   
     constructor(props){
         super(props)
-
         this.state = {
             term : '',
-            categories : ['Business', 'Sports', 'Technology', 'General', 'Science', 'Health']};
+        }
     }
 
     handleSubmit(txt){
@@ -34,18 +36,19 @@ class Welcome extends Component {
         return (
            <Container> 
            <Inscription>
-                <Span className="word1">What</Span> 
-                <Span className="word2"> news</Span>
-                <Span className="word3"> do</Span>
-                <Span className="word4"> You</Span> 
-                <Span className="word5"> prefer?</Span>
+                <SpanRight delay={wordDisplayDelay[0]}>What</SpanRight> 
+                <SpanLeft delay={wordDisplayDelay[1]}> news</SpanLeft>
+                <Span delay={wordDisplayDelay[2]}> do</Span>
+                <Span delay={wordDisplayDelay[3]}> You</Span> 
+                <Span delay={wordDisplayDelay[4]}> prefer?</Span>
             </Inscription>
             <CategoriesWrapper>
                 <ListCategory>
-                 {this.state.categories.map((name, i)=>{
+                 {categories.map((name, i)=>{
                     return <Category
-                            id={`element-${i}`}
                             key={i}
+                            color={categoryColors[i]}
+                            delay={categoryDisplayDelay[i]}
                             onClick = {e => this.chooseCattegory(e)}
                             myvalue={name}>{name}
                            </Category>
