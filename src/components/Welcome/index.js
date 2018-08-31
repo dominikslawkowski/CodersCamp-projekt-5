@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {categoryColors, categories} from '../consts';
 import {
         Container, 
         CategoriesWrapper, 
@@ -10,21 +11,15 @@ import {
         Category
        } from './style';
 
-
-const categoryColors = ['rgb(252, 211, 30)','rgb(255, 0, 0)', 'rgb(61, 216, 255)', 'rgb(255, 255, 255)', 'rgb(174, 53, 255)',
-                            'rgb(9, 255, 0)'];
-
 const categoryDisplayDelay = ['1.05s', '1.15s', '1.25s', '1.15s', '1.25s', '1.35s'];
-
 const wordDisplayDelay = ['.2s', '.4s', '.6s', '.8s', '1s'];
 
 class Welcome extends Component {
     constructor(props){
         super(props)
-
         this.state = {
             term : '',
-            categories : ['Business', 'Sports', 'Technology', 'General', 'Science', 'Health']};
+        }
     }
 
     handleSubmit(txt){
@@ -49,7 +44,7 @@ class Welcome extends Component {
             </Inscription>
             <CategoriesWrapper>
                 <ListCategory>
-                 {this.state.categories.map((name, i)=>{
+                 {categories.map((name, i)=>{
                     return <Category
                             key={i}
                             color={categoryColors[i]}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import Welcome from './components/Welcome/index';
 import SearchBar from './components/SearchBar';
-import Category from './components/Category';
+import Category from './components/Category/index';
 import NewsList from './components/NewsList';
 import Footer from './components/Footer';
 // import Menu from './components/Menu';
@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 const API_KEY = 'aabf6ff51a5c42ffaec96e55c6af6297';
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
