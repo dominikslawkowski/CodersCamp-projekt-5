@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
-import '../style/Welcome.css';
-
+import '../../style/Welcome.css';
+import {
+        Container, 
+        CategoriesWrapper, 
+        Inscription, 
+        ListCategory,
+        Span,
+        Category
+       } from './style';
+import '../../style/Welcome.css';
 
 class Welcome extends Component {
    
@@ -24,27 +32,27 @@ class Welcome extends Component {
 
     render(){
         return (
-           <div className="welcome-container"> 
-           <p className="welcome-inscription">
-                <span className="word1">What</span> 
-                <span className="word2"> news</span>
-                <span className="word3"> do</span>
-                <span className="word4"> You</span> 
-                <span className="word5"> prefer?</span>
-            </p>
-            <div className="welcome-categories-wrapper">
-                <ul className="welcome">
+           <Container> 
+           <Inscription>
+                <Span className="word1">What</Span> 
+                <Span className="word2"> news</Span>
+                <Span className="word3"> do</Span>
+                <Span className="word4"> You</Span> 
+                <Span className="word5"> prefer?</Span>
+            </Inscription>
+            <CategoriesWrapper>
+                <ListCategory>
                  {this.state.categories.map((name, i)=>{
-                    return <li 
-                            className={`welcome-category element-${i}`}
+                    return <Category
+                            id={`element-${i}`}
                             key={i}
                             onClick = {e => this.chooseCattegory(e)}
                             myvalue={name}>{name}
-                           </li>
+                           </Category>
                  })}
-                </ul>
-            </div>
-           </div>     
+                </ListCategory>
+            </CategoriesWrapper>
+           </Container>     
         )
     }
 }

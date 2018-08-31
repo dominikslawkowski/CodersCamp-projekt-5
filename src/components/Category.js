@@ -12,13 +12,18 @@ class Category extends Component {
                <div 
                key={index} 
                className={`category-element category-element-${index}`} 
-               onClick={() => this.props.categoryClicked(category, '', this.props.country)}>
+               onClick={() => this.changeCategory(category, this.props.country)}>
                {category}
                </div>
               ))}
         </div>
       </div>
     );
+  }
+
+  changeCategory(category, country){
+    this.props.categoryClicked('', '', '');
+    this.props.categoryClicked(category, '', country);
   }
 }
 

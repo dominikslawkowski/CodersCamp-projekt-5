@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import Welcome from './components/Welcome';
+import Welcome from './components/Welcome/index';
 import SearchBar from './components/SearchBar';
 import Category from './components/Category';
 import NewsList from './components/NewsList';

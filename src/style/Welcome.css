@@ -1,89 +1,5 @@
-  .welcome-container {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    min-height: 500px;
-    min-width: 320px;
-    font-size: 16px;
-    background-color: #000;
-    background-position: cover;
-  }
-  
-  .welcome-inscription{
-    margin: 0;
-    color: #9eb3ff;
-    font-size: 50px;
-    letter-spacing: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .welcome-category:hover {
-    color: white;
-    background-color: transparent;
-    border-color: white;
-    cursor: pointer;
-  }
-  
-  .welcome-category {
-    height: 30px;
-    width: 200px;
-    margin: 10px;
-    padding: 10px;
-    padding-bottom: 10px;
-    display:inline-block;
-    text-align: center;
-    font-weight: 400;
-    border-radius: 30px;
-    border: 1px solid #9eb3ff;
-    color: #9eb3ff;
-    animation: category-move .5s 1.05s ease-in-out forwards;
-    opacity: 0;
-    transition: all .3s ease-in-out;
-  }
-
-  .welcome {
-    display: grid;
-    grid-template-columns: repeat(3, 250px);
-    justify-content: center;
-    justify-items: center;
-    text-align: center;
-    list-style-type: none;
-    font-size: 1.25em;
-    padding:0;
-    letter-spacing: 2px;
-  }
-  
-
-  .welcome-categories-wrapper{
-    width: 100vw;
-    height: 20vh;
-  }
 
   @media screen and (max-width: 756px){
-
-    .welcome-container{
-      display: block;
-      margin-top: 180px;
-    }
-
-    .welcome-inscription{
-      font-size: 40px;
-    }
-
-    .welcome-category{
-      height: 25px;
-      width: 150px;
-      font-size: 20px;
-      padding-bottom: 15px;
-    }
-
-    .welcome{
-      grid-template-columns: repeat(2, 200px);
-    }
 
     .word1{
       width: 45%;
@@ -93,16 +9,6 @@
     .word2 {
       width: 45%;
       text-align: left;
-    }
-
-  }
-  
-@media screen and (max-width: 400px){
-    .welcome{
-      grid-template-columns: 200px;
-    }
-    .welcome-inscription {
-      font-size: 25px;
     }
 
   }
@@ -135,16 +41,6 @@
     }
   }
 
-  .welcome-container span{
-     display: inline-block;
-     margin: 5px;
-     animation-fill-mode: forwards;
-     animation-timing-function: linear;
-     animation-name: show;
-     animation-duration: .05s;
-     opacity: 0;
-  }
-
   .word1{
     animation-delay: .2s;
   }
@@ -175,56 +71,56 @@
     }
   }
 
-  .element-0{
+  #element-0{
     animation-delay: 1.05s;
   }
 
-  .element-1 {
+  #element-1 {
     animation-delay: 1.15s;
   }
 
-  .element-2 {
+  #element-2 {
     animation-delay: 1.25s;
   }
 
-  .element-3 {
+  #element-3 {
     animation-delay: 1.15s;
   }
 
-  .element-4 {
+  #element-4 {
     animation-delay: 1.25s;
   }
 
-  .element-5 {
+  #element-5 {
     animation-delay: 1.35s;
   }
 
-  .element-0:hover{
+  #element-0:hover{
     color: rgb(252, 211, 30);
     border-color: rgb(252, 211, 30);
   }
 
-  .element-1:hover {
+  #element-1:hover {
     color: rgb(255, 0, 0);
     border-color: rgb(255, 0, 0);
   }
 
-  .element-2:hover {
+  #element-2:hover {
     color: rgb(61, 216, 255);
     border-color: rgb(61, 216, 255);
   }
 
-  .element-3:hover {
+  #element-3:hover {
     color: rgb(255, 255, 255);
     border-color: rgb(255, 255, 255);
   }
 
-  .element-4:hover {
+  #element-4:hover {
     color: rgb(174, 53, 255);
     border-color: rgb(174, 53, 255);
   }
 
-  .element-5:hover {
+  #element-5:hover {
     color: rgb(9, 255, 0);
     border-color: rgb(9, 255, 0);
   }
