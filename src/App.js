@@ -7,8 +7,6 @@ import NewsList from './components/NewsList';
 import Footer from './components/Footer/index';
 // import Menu from './components/Menu';
 
-const API_KEY = 'aabf6ff51a5c42ffaec96e55c6af6297';
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -31,15 +29,7 @@ class App extends Component {
   }
 
   newsSearch(term, search, country) {
-    const url = `https://newsapi.org/v2/everything?pageSize=30&language=${country}&q=${term}&apiKey=${API_KEY}`;
-
-    fetch(url)
-      .then(data => data.json())
-      .then(data => this.setState({
-        theme: term,
-        news: data.articles,
-        searchTerm: search
-      }));
+    
   }
   
   render() {
@@ -51,9 +41,8 @@ class App extends Component {
       :
       <div className="App">
         <SearchBar onSearchTermChange={_.debounce(this.newsSearch, 500)} country={this.state.country}/>
-          <Category categories={this.state.categories} categoryClicked={this.newsSearch} country={this.state.country}/>
+          <Category categoryClicked={this.newsSearch} country={this.state.country}/>
           <NewsList 
-            news={this.state.news} 
             conditions={this.state.searchTerm}
             terms={this.state.theme}/>
           {/* <Menu savedNews={this.state.savedNews} /> */}

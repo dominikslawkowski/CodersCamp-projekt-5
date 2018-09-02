@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import News from './News';
+import { connect } from 'react-redux';
 
 const styleForContainerOfNews = {
     display: 'flex',
@@ -10,7 +11,7 @@ const styleForContainerOfNews = {
     overflow: 'hidden',
 }
 
-class NewsList extends React.Component {
+class NewsList extends Component {
     constructor(props){
         super(props);
         this.tabOfElementsToDisplay=[];
@@ -47,5 +48,8 @@ class NewsList extends React.Component {
     }
   }
     
+const mapStateToProps = state => ({
+    news: state.news,
+});
 
-export default NewsList;
+export default connect(mapStateToProps, null)(NewsList);
