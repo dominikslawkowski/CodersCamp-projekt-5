@@ -27,11 +27,11 @@ class App extends Component {
   changeState(){
     this.setState({
       initial: false
-    })
+    });
   }
 
   newsSearch(term, search, country) {
-    const url = `https://newsapi.org/v2/everything?pageSize=50&language=${country}&q=${term}&apiKey=${API_KEY}`;
+    const url = `https://newsapi.org/v2/everything?pageSize=30&language=${country}&q=${term}&apiKey=${API_KEY}`;
 
     fetch(url)
       .then(data => data.json())
@@ -50,7 +50,7 @@ class App extends Component {
       </div>
       :
       <div className="App">
-        <SearchBar onSearchTermChange={_.debounce(this.newsSearch,500)} country={this.state.country}/>
+        <SearchBar onSearchTermChange={_.debounce(this.newsSearch, 500)} country={this.state.country}/>
           <Category categories={this.state.categories} categoryClicked={this.newsSearch} country={this.state.country}/>
           <NewsList 
             news={this.state.news} 

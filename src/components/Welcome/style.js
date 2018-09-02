@@ -72,9 +72,7 @@ export const Category = styled.div.attrs({
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: ${props => props.color};
-    background-color: transparent;
-    border-color: ${props => props.color};
+    background-color: ${props => props.color};
     cursor: pointer;
   }
 
