@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { newsSearch } from '../../actions/index';
+import { newsSearch, setCurrentTheme } from '../../actions/index';
 import {categoryColors, categories} from '../consts';
 import {
         Container, 
@@ -21,14 +21,14 @@ class Welcome extends Component {
     constructor(props){
         super(props)
         this.state = {
-            term : 'sports',
             country: 'en',
         }
     }
     
     onClickCategoryButton(e){
-        this.setState({term: e.currentTarget.innerHTML}, this.props.changeState());
-        this.props.newsSearch(this.state.term, '', this.state.country);
+        this.props.changeState();
+        this.props.setCurrentTheme(e.currentTarget.innerHTML);
+        this.props.newsSearch(this.props.theme, '', this.state.country);
     }
 
     render(){
@@ -58,8 +58,14 @@ class Welcome extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    theme: state.theme
+});
+
 const mapDispatchToProps = dispatch => bindActionCreators({
     newsSearch,
-  }, dispatch);
+    setCurrentTheme}, dispatch
+);
   
-  export default connect(null, mapDispatchToProps)(Welcome);
+  export default connect(mapStateToProps, mapDispatchToProps)(Welcome);

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import News from './News';
 import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { newsSearch } from "../actions/index";
 
 const styleForContainerOfNews = {
     display: 'flex',
@@ -11,11 +13,13 @@ const styleForContainerOfNews = {
     overflow: 'hidden',
 }
 
+
 class NewsList extends Component {
     constructor(props){
         super(props);
         this.tabOfElementsToDisplay=[];
     }
+
     nothingToDisplay = (conditions, terms) => {
         this.tabOfElementsToDisplay = [];
         const nothing = 
@@ -50,6 +54,15 @@ class NewsList extends Component {
     
 const mapStateToProps = state => ({
     news: state.news,
+    theme: state.theme
 });
 
-export default connect(mapStateToProps, null)(NewsList);
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    newsSearch,
+    }, dispatch
+);
+  
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewsList);

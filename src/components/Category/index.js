@@ -1,33 +1,51 @@
 import React, { Component } from "react";
-import {categoryColors, categories} from "../consts";
-import {
-    Container,
-    CategoryList,
-    CategoryElement
-   } from './style';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { newsSearch, setCurrentTheme } from "../../actions/index";
+
+import { categoryColors, categories } from "../consts";
+import { Container, CategoryList, CategoryElement } from "./style";
+
+const country = "en";
 
 class Category extends Component {
+
   render() {
+    console.log(this.props.theme);
     return (
       <Container>
-          <CategoryList>
-             {categories.map((category,i) => (
-               <CategoryElement 
-               key={i}
-               color={categoryColors[i]}
-               onClick={() => this.changeCategory(category, this.props.country)}>
-               {category}
-               </CategoryElement>
-              ))}
-          </CategoryList>
+        <CategoryList>
+          {categories.map((category, i) => (
+            <CategoryElement
+              key={i}
+              color={categoryColors[i]}
+              onClick={e => this.onClickCategoryButton(e)}
+            >
+              {category}
+            </CategoryElement>
+          ))}
+        </CategoryList>
       </Container>
     );
   }
 
-  changeCategory(category, country){
-    this.props.categoryClicked('', '', '');
-    this.props.categoryClicked(category, '', country);
+  onClickCategoryButton(e) {
+    this.props.setCurrentTheme(e.currentTarget.innerHTML);
+    this.props.newsSearch(this.props.theme, "", country);
   }
 }
 
-export default Category;
+const mapStateToProps = state => ({
+  theme: state.theme
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      newsSearch,
+      setCurrentTheme
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps,mapDispatchToProps)(Category);
