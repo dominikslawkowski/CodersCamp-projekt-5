@@ -1,6 +1,7 @@
 import React from 'react';
 import News from './../News/index';
-import Wrapper from './style.js'
+import {Wrapper} from './style.js';
+import {UXinfo} from './style.js';
 
 class NewsList extends React.Component {
     constructor(props){
@@ -33,6 +34,7 @@ class NewsList extends React.Component {
 
         return(
             <Wrapper>
+                <UXinfo>You have searched for <span>{this.props.terms}</span></UXinfo>
                 {this.tabOfElementsToDisplay}
             </Wrapper>
         );
