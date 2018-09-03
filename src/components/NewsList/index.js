@@ -1,14 +1,6 @@
 import React from 'react';
-import News from './News';
-
-const styleForContainerOfNews = {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    width: '100%',
-    margin: '0 auto',
-    overflow: 'hidden',
-}
+import News from './../News/index';
+import Wrapper from './style.js'
 
 class NewsList extends React.Component {
     constructor(props){
@@ -40,9 +32,9 @@ class NewsList extends React.Component {
         this.nothingToDisplay(this.props.conditions, this.props.terms);
 
         return(
-            <div style={styleForContainerOfNews}>
+            <Wrapper>
                 {this.tabOfElementsToDisplay}
-            </div>
+            </Wrapper>
         );
     }
   }

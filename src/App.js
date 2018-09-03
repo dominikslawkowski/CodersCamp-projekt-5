@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import Welcome from './components/Welcome/index';
-import SearchBar from './components/SearchBar';
+import SearchBar from './components/SearchBar/index';
 import Category from './components/Category/index';
-import NewsList from './components/NewsList';
+import NewsList from './components/NewsList/index';
 import Footer from './components/Footer/index';
 // import Menu from './components/Menu';
 
