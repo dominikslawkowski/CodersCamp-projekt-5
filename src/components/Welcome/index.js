@@ -23,12 +23,15 @@ class Welcome extends Component {
         this.state = {
             country: 'en',
         }
+        
     }
+    
     
     onClickCategoryButton(e){
         this.props.changeState();
-        this.props.setCurrentTheme(e.currentTarget.innerHTML);
-        this.props.newsSearch(this.props.theme, '', this.state.country);
+        
+        this.props.newsSearch(e.currentTarget.innerHTML, '', this.state.country);
+        
     }
 
     render(){
@@ -60,7 +63,9 @@ class Welcome extends Component {
 }
 
 const mapStateToProps = state => ({
+    
     theme: state.theme
+   
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
@@ -69,3 +74,5 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 );
   
   export default connect(mapStateToProps, mapDispatchToProps)(Welcome);
+
+  

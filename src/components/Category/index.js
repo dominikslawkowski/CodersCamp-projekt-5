@@ -30,8 +30,8 @@ class Category extends Component {
   }
 
   onClickCategoryButton(e) {
-    this.props.setCurrentTheme(e.currentTarget.innerHTML);
-    this.props.newsSearch(this.props.theme, "", country);
+    
+    this.props.newsSearch(e.currentTarget.innerHTML, "", country);
   }
 }
 
