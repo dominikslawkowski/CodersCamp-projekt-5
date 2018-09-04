@@ -32,6 +32,7 @@ class NewsList extends Component {
         })
     }
     render(){
+        console.log(this.props.news);
         (this.props.news && this.props.news.length > 1)?
         this.divideNewsBetweenTilts(this.props.news):
         this.nothingToDisplay(this.props.conditions, this.props.terms);
