@@ -11,7 +11,7 @@ const country = "en";
 class Category extends Component {
 
   render() {
-    console.log(this.props.theme);
+    console.log("Co to jest", this.props.theme);
     return (
       <Container>
         <CategoryList>
@@ -30,7 +30,7 @@ class Category extends Component {
   }
 
   onClickCategoryButton(e) {
-    
+    this.props.setCurrentTheme(e.currentTarget.innerHTML);
     this.props.newsSearch(e.currentTarget.innerHTML, "", country);
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/News.css'
+import Wrapper from './style';
 const News = ({news}) => {
   
   const imgURL = news.urlToImage;
@@ -10,11 +10,11 @@ const News = ({news}) => {
   return( 
     !imgURL? <div></div>
     :
-    <div onClick={() => {window.open(urlToPage, "_blank");}} className="Tile">
+    <Wrapper onClick={() => {window.open(urlToPage, "_blank");}} className="Tile">
       <img className="imgNews" alt="" src={imgURL} height="100%" width="100%" />      
       <div className="titleNews">{title}</div>
       <div className="descriptionNews">{description}</div>      
-    </div>
+    </Wrapper>
     );
 };
 

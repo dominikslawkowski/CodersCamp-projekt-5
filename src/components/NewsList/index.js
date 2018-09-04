@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import News from './News';
+import News from '../News/index'
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import { newsSearch } from "../actions/index";
-
-const styleForContainerOfNews = {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    width: '100%',
-    margin: '0 auto',
-    overflow: 'hidden',
-}
-
+import { newsSearch } from "../../actions/index";
+import {UXinfo} from './style.js';
+import {Wrapper} from './style.js';
 
 class NewsList extends Component {
     constructor(props){
@@ -45,9 +37,10 @@ class NewsList extends Component {
         this.nothingToDisplay(this.props.conditions, this.props.terms);
 
         return(
-            <div style={styleForContainerOfNews}>
+            <Wrapper>
+                <UXinfo>You have searched for <span>{this.props.theme}</span></UXinfo>
                 {this.tabOfElementsToDisplay}
-            </div>
+            </Wrapper>
         );
     }
   }
@@ -57,12 +50,9 @@ const mapStateToProps = state => ({
     theme: state.theme
 });
 
-
 const mapDispatchToProps = dispatch => bindActionCreators({
     newsSearch,
     }, dispatch
 );
   
-
-
 export default connect(mapStateToProps, mapDispatchToProps)(NewsList);
