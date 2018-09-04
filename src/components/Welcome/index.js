@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { newsSearch, setCurrentTheme } from '../../actions/index';
 import {categoryColors, categories} from '../consts';
 import {
         Container, 
@@ -18,18 +21,14 @@ class Welcome extends Component {
     constructor(props){
         super(props)
         this.state = {
-            term : '',
+            country: 'en',
         }
     }
-
-    handleSubmit(txt){
-        this.props.onClickChooseNews(txt, '', this.props.country);
-        this.props.changeState();
-    }
     
-    chooseCattegory(e){
-        var value = e.target.innerHTML;
-        this.setState({term: e.currentTarget.innerHTML}, this.handleSubmit(value));
+    onClickCategoryButton(e){
+        this.props.changeState();
+        this.props.setCurrentTheme(e.currentTarget.innerHTML);
+        this.props.newsSearch(e.currentTarget.innerHTML, '', this.state.country);
     }
 
     render(){
@@ -49,7 +48,7 @@ class Welcome extends Component {
                             key={i}
                             color={categoryColors[i]}
                             delay={categoryDisplayDelay[i]}
-                            onClick = {e => this.chooseCattegory(e)}
+                            onClick = {e => this.onClickCategoryButton(e)}
                             myvalue={name}>{name}
                            </Category>
                  })}
@@ -60,4 +59,13 @@ class Welcome extends Component {
     }
 }
 
-export default Welcome;
+
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    newsSearch,
+    setCurrentTheme}, dispatch
+);
+  
+  export default connect(null, mapDispatchToProps)(Welcome);
+
+  

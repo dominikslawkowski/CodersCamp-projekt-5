@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { newsSearch, setCurrentTheme } from "../../actions/index";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,7 +12,6 @@ class SearchBar extends Component {
         super(props);
         this.state = {searchTerm: ''};
     }
-   
     
     render() {
         return (
@@ -23,15 +24,23 @@ class SearchBar extends Component {
             </Wrapper>
             )
     }
-    
-
-    
 
     onInputChange(searchTerm) {
         this.setState({searchTerm});
-        this.props.onSearchTermChange('', '', '');
-        this.props.onSearchTermChange(searchTerm, '', this.props.country);
+        this.props.newsSearch('', '', '');
+        this.props.newsSearch(searchTerm, '', this.props.country);
+        this.props.setCurrentTheme(searchTerm);
     }
 }
 
-    export default SearchBar;
+const mapDispatchToProps = dispatch =>
+bindActionCreators(
+  {
+    newsSearch,
+    setCurrentTheme
+  },
+  dispatch
+);
+
+export default connect(null,mapDispatchToProps)(SearchBar);
+

@@ -1,13 +1,17 @@
-import React from 'react';
-import News from './../News/index';
-import {Wrapper} from './style.js';
+import React, { Component } from 'react';
+import News from '../News/index'
+import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { newsSearch } from "../../actions/index";
 import {UXinfo} from './style.js';
+import {Wrapper} from './style.js';
 
-class NewsList extends React.Component {
+class NewsList extends Component {
     constructor(props){
         super(props);
         this.tabOfElementsToDisplay=[];
     }
+
     nothingToDisplay = (conditions, terms) => {
         this.tabOfElementsToDisplay = [];
         const nothing = 
@@ -34,12 +38,21 @@ class NewsList extends React.Component {
 
         return(
             <Wrapper>
-                <UXinfo>You have searched for <span>{this.props.terms}</span></UXinfo>
+                <UXinfo>You have searched for <span>{this.props.theme}</span></UXinfo>
                 {this.tabOfElementsToDisplay}
             </Wrapper>
         );
     }
   }
     
+const mapStateToProps = state => ({
+    news: state.news,
+    theme: state.theme
+});
 
-export default NewsList;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    newsSearch,
+    }, dispatch
+);
+  
+export default connect(mapStateToProps, mapDispatchToProps)(NewsList);
