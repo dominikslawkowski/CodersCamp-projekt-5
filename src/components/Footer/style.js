@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import media from '../styled-media-queries';
 
 export const About = styled.div`
-    width: 60vw;
+    width: 75vw;
     margin-left: auto;
     margin-right: auto; 
 `;
@@ -119,11 +119,12 @@ export const Label = styled.div`
 
 export const Skills = styled.div`
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    margin-left: auto;
+    margin-left: auto;  
     margin-right: auto;
     margin-top: 50px;
+    margin-bottom: 20px;
 `;
 
 export const Skill = styled.div`
@@ -131,5 +132,8 @@ export const Skill = styled.div`
     color: #9eb3ff;
     border: solid 1px #9eb3ff;
     border-radius: 20px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
     padding: 10px;
 `;
