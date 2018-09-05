@@ -1,4 +1,4 @@
-export const technologies = ['React', 'JavaScript', 'GIT', 'cmder', 'NewsApi', 'AJAX', 'lodash' ,'promises', "webpack", 'yarn and npm'];
+export const technologies = ['React', 'Redux', 'JavaScript', 'GIT', 'cmder', 'NewsApi', 'AJAX', 'lodash' ,'promises', "webpack", 'yarn and npm'];
 
 export const authorData = [
     {

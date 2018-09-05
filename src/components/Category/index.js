@@ -13,7 +13,6 @@ const country = "en";
 class Category extends Component {
 
   render() {
-    console.log("Co to jest", this.props.theme);
     return (
       <Container>
         <CategoryList>

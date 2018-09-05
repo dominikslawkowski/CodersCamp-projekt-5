@@ -8,7 +8,7 @@ export const newsSearch = (term, search, country) => {
     const request = axios.get(
         `https://newsapi.org/v2/everything?pageSize=30&language=${country}&q=${term}&apiKey=${API_KEY}`
     );
-    
+
     return dispatch => {
         request
             .then(({data}) => {

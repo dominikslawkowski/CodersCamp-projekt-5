@@ -29,9 +29,10 @@ class SearchBar extends Component {
 
     onInputChange(searchTerm) {
         this.setState({searchTerm});
-        this.props.newsSearch('', '', '');
-        this.props.newsSearch(searchTerm, '', this.props.country);
         this.props.setCurrentTheme(searchTerm);
+        if(searchTerm){
+            this.props.newsSearch(searchTerm, '', this.props.country);
+        }
     }
 }
 
