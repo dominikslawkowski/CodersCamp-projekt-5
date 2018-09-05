@@ -1,6 +1,6 @@
 import React from 'react';
 import Wrapper from './style';
-const News = ({news}) => {
+const VisitedNews = ({news}) => {
   
   const imgURL = news.urlToImage;
   const description = news.description;
@@ -10,12 +10,14 @@ const News = ({news}) => {
   return( 
     !imgURL? <div></div>
     :
-    <Wrapper onClick={() => {window.open(urlToPage, "_blank");}} className="Tile">
+    <Wrapper onClick={() => {onclickhandler(urlToPage)}} className="Tile">
       <img className="imgNews" alt="" src={imgURL} height="100%" width="100%" />      
       <div className="titleNews">{title}</div>
       <div className="descriptionNews">{description}</div>      
     </Wrapper>
     );
 };
-
-export default News;
+var onclickhandler = (urlToPage) => {
+  window.open(urlToPage, "_blank");
+}
+export default VisitedNews;

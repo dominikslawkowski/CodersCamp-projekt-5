@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Welcome from './components/Welcome/index';
-import SearchBar from './components/SearchBar/index';
-import Category from './components/Category/index';
-import NewsList from './components/NewsList/index';
-import Footer from './components/Footer/index';
+import BodyApp from './components/MainPage/BodyApp';
+import Prefer from './components/Favourite/Prefer';
 // import Menu from './components/Menu';
 
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -15,36 +14,22 @@ class App extends Component {
       searchTerm: '',
       savedNews: [],
       country: 'en',
-      initial: true
     };
-    this.changeState = this.changeState.bind(this);
-  }
-
-  changeState(){
-    this.setState({
-      initial: false
-    });
   }
 
   render() {
     return (
-      this.state.initial ? 
-      <div className="App"> 
-        <Welcome changeState={this.changeState} country={this.state.country}/>
-      </div>
-      :
-      <div className="App">
-              <SearchBar country={this.state.country}/>
-              <Category country={this.state.country}/>
-              <NewsList 
-                conditions={this.state.searchTerm}
-              />
-              {/* <Menu savedNews={this.state.savedNews} /> */}
-              <Footer/>   
-      </div>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/newslist" render={(props)=><BodyApp country={this.state.country} conditions={this.state.searchTerm}/>}/>
+            <Route path="/preference" render={(props)=><Prefer country={this.state.country} conditions={this.state.searchTerm}/>}/>
+            <Route path="/" render={(props)=><Welcome changeState={this.changeState} country={this.state.country}/>}/> 
+          </Switch>   
+        </div>
+      </Router>
     );
   }
 }
-
 
 export default App

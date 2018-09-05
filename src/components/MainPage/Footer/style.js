@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import media from '../styled-media-queries';
+import media from '../../styled-media-queries';
 
 export const About = styled.div`
     width: 75vw;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import media from "../styled-media-queries";
+import media from "../../styled-media-queries";
 
 export const Container = styled.div`
     width: 800px;

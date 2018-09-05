@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import News from '../News/index'
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import { newsSearch } from "../../actions/index";
+import { newsSearch } from "../../../actions/index";
 import {UXinfo} from './style.js';
 import {Wrapper} from './style.js';
-
-import {withRouter} from 'react-router-dom';
 
 class NewsList extends Component {
     constructor(props){
@@ -47,8 +45,7 @@ class NewsList extends Component {
                 <UXinfo>You have searched for <span>{this.props.theme}</span></UXinfo>
                 {this.tabOfElementsToDisplay}
             </Wrapper>
-            
-            
+                    
         );
     }
   }
@@ -63,7 +60,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     }, dispatch
 );
   
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NewsList));
+export default connect(mapStateToProps, mapDispatchToProps)(NewsList);
 
 
   

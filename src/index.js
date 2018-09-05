@@ -13,7 +13,7 @@ const store = createStore(newsApp, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>    
+  <App/>
   </Provider>,
   document.getElementById("root")
 );

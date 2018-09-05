@@ -14,7 +14,7 @@ import {
         Category
        } from './style';
 
-       import {withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const categoryDisplayDelay = ['1.05s', '1.15s', '1.25s', '1.15s', '1.25s', '1.35s'];
 const wordDisplayDelay = ['.2s', '.4s', '.6s', '.8s', '1s'];
@@ -28,7 +28,6 @@ class Welcome extends Component {
     }
     
     onClickCategoryButton(e){
-        this.props.changeState();
         this.props.setCurrentTheme(e.currentTarget.innerHTML);
         this.props.newsSearch(e.currentTarget.innerHTML, '', this.state.country);
     }
@@ -46,13 +45,14 @@ class Welcome extends Component {
             <CategoriesWrapper>
                 <ListCategory>
                  {categories.map((name, i)=>{
-                    return <Category
-                            key={i}
-                            color={categoryColors[i]}
-                            delay={categoryDisplayDelay[i]}
-                            onClick = {e => this.onClickCategoryButton(e)}
-                            myvalue={name}>{name}
-                           </Category>
+                    return  <Link to="/newslist"key={i}>
+                                <Category
+                                    color={categoryColors[i]}
+                                    delay={categoryDisplayDelay[i]}
+                                    onClick = {e => this.onClickCategoryButton(e)}
+                                    myvalue={name}>{name}
+                                </Category>
+                            </Link>
                  })}
                 </ListCategory>
             </CategoriesWrapper>
@@ -61,13 +61,11 @@ class Welcome extends Component {
     }
 }
 
-
-
 const mapDispatchToProps = dispatch => bindActionCreators({
     newsSearch,
     setCurrentTheme}, dispatch
 );
   
-  export default withRouter(connect(null, mapDispatchToProps)(Welcome));
+export default connect(null, mapDispatchToProps)(Welcome);
 
   
