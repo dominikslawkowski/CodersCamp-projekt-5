@@ -5,6 +5,8 @@ import { bindActionCreators } from "redux";
 import { newsSearch } from "../../../actions/index";
 import {UXinfo} from './style.js';
 import {Wrapper} from './style.js';
+import {LinkButton} from './style.js';
+import {Link} from 'react-router-dom';
 
 class NewsList extends Component {
     constructor(props){
@@ -43,6 +45,11 @@ class NewsList extends Component {
            
             <Wrapper>
                 <UXinfo>You have searched for <span>{this.props.theme}</span></UXinfo>
+                <div style={{width: '100%'}}>
+                <Link to="/preference">
+                    <LinkButton>Recently seen</LinkButton>
+                </Link>
+                </div>
                 {this.tabOfElementsToDisplay}
             </Wrapper>
                     

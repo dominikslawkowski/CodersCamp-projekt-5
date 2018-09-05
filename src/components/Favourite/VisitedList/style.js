@@ -4,9 +4,11 @@ export const UXinfo = styled.div `
     color: rgba(255,255,255,0.5);
     text-transform: uppercase;
     width: 80%;
-    margin: 10px 0;
+    margin: 20px 0;
+    padding: 20px 0;
     text-align: center;
-
+    font-size: 16px;
+    border-bottom: solid 2px #9eb3ff;
     span {
         color: #9eb3ff;
     }

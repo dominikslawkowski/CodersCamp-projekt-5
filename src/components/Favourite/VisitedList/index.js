@@ -14,6 +14,7 @@ class VisitedList extends Component {
         const nothing = 
             <div className="loading" key="terms">
                 <p className="sorry">Looks like You haven't visited anything yet</p>
+                <p className="sorry">or You just simply do not allow us to use cookies...</p>
             </div>
         this.tabOfElementsToDisplay.push(nothing);
     }

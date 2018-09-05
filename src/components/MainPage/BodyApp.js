@@ -4,7 +4,7 @@ import SearchBar from './SearchBar/index';
 import Category from './Category/index';
 import NewsList from './NewsList/index';
 import Footer from './Footer/index';
-import TemporaryButton from './TemporaryButton';
+
 // import Menu from './components/Menu';
 
 
@@ -22,7 +22,6 @@ class BodyApp extends Component {
   render() {
     return (
         <div>
-            <TemporaryButton/>
             <SearchBar country={this.props.country}/>
             <Category country={this.props.country}/>
             <NewsList conditions={this.props.searchTerm}/>

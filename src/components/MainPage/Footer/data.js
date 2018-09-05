@@ -1,4 +1,4 @@
-export const technologies = ['React', 'Redux', 'JavaScript', 'GIT', 'cmder', 'NewsApi', 'AJAX', 'lodash' ,'promises', "webpack", 'yarn and npm'];
+export const technologies = ['React', 'Redux', 'React Router', 'JavaScript', 'GIT', 'cmder', 'NewsApi', 'AJAX', 'lodash' ,'promises', "webpack", 'yarn and npm'];
 
 export const authorData = [
     {
@@ -23,7 +23,7 @@ export const authorData = [
     },
     {
         name: "Maciej Bartyński",
-        description: "NewsList component, footer component, vertical data flow, invalid searching results managing, user flow",
+        description: "React Router, NewsList component, footer component, vertical data flow, invalid searching results managing, user flow",
         github: "https://github.com/maciej-bartynski"
     },
     {
