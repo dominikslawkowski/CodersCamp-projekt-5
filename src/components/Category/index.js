@@ -6,6 +6,8 @@ import { newsSearch, setCurrentTheme } from "../../actions/index";
 import { categoryColors, categories } from "../consts";
 import { Container, CategoryList, CategoryElement } from "./style";
 
+import {withRouter} from 'react-router-dom';
+
 const country = "en";
 
 class Category extends Component {
@@ -48,4 +50,4 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps,mapDispatchToProps)(Category);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Category));

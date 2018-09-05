@@ -6,6 +6,7 @@ import NewsList from './components/NewsList/index';
 import Footer from './components/Footer/index';
 // import Menu from './components/Menu';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -33,16 +34,17 @@ class App extends Component {
       </div>
       :
       <div className="App">
-        <SearchBar country={this.state.country}/>
-          <Category country={this.state.country}/>
-          <NewsList 
-            conditions={this.state.searchTerm}
-            />
-          {/* <Menu savedNews={this.state.savedNews} /> */}
-        <Footer/>   
+              <SearchBar country={this.state.country}/>
+              <Category country={this.state.country}/>
+              <NewsList 
+                conditions={this.state.searchTerm}
+              />
+              {/* <Menu savedNews={this.state.savedNews} /> */}
+              <Footer/>   
       </div>
     );
   }
 }
 
-export default App;
+
+export default App

@@ -7,6 +7,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import Wrapper from './style.js';
 
+import {withRouter} from 'react-router-dom';
+
 class SearchBar extends Component {
     constructor(props) {
         super(props);
@@ -42,5 +44,5 @@ bindActionCreators(
   dispatch
 );
 
-export default connect(null,mapDispatchToProps)(SearchBar);
+export default withRouter(connect(null,mapDispatchToProps)(SearchBar));
 

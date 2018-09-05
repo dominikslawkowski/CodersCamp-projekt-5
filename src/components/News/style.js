@@ -111,56 +111,29 @@ const Wrapper = styled.div`
         margin-top: 200px;
     }
 
-    @keyframes tile-move{
-        from{
-            opacity: 0;
-        }
+    .dot{
+        width: 25px;
+        height: 25px;
+        margin: 10px;
+        display: inline-block;
+        background-color: #9eb3ff;
+        border-radius: 50%;
+        animation: dot-move 1s infinite linear;
     }
 
-@keyframes dot-move {
-  0% {
-    transform: translateY(0);
-  }
+    .dot1{
+        animation-delay: 0;
+    }
 
-  25%{
-    transform: translateY(20px);
-  }
-  50% {  
-    transform: translateY(0);
-  }
+    .dot2{
+        animation-delay: .2s;
+    }
 
-  75%{
-    transform: translateY(-20px)
-  }
-
-  100%{
-    transform: translateY(0);
-  }
-}
-
-.dot{
-  width: 25px;
-  height: 25px;
-  margin: 10px;
-  display: inline-block;
-  background-color: #9eb3ff;
-  border-radius: 50%;
-  animation: dot-move 1s infinite linear
-  ;
-}
-
-.dot1{
-  animation-delay: 0;
-}
-
-.dot2{
-  animation-delay: .2s;
-}
-
-.dot3{
-  animation-delay: .4s;
-}
+    .dot3{
+        animation-delay: .4s;
+    }
 
 `;
 
 export default Wrapper;
+

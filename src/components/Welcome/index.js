@@ -14,6 +14,8 @@ import {
         Category
        } from './style';
 
+       import {withRouter} from 'react-router-dom';
+
 const categoryDisplayDelay = ['1.05s', '1.15s', '1.25s', '1.15s', '1.25s', '1.35s'];
 const wordDisplayDelay = ['.2s', '.4s', '.6s', '.8s', '1s'];
 
@@ -66,6 +68,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     setCurrentTheme}, dispatch
 );
   
-  export default connect(null, mapDispatchToProps)(Welcome);
+  export default withRouter(connect(null, mapDispatchToProps)(Welcome));
 
   

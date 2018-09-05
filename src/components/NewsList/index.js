@@ -6,19 +6,24 @@ import { newsSearch } from "../../actions/index";
 import {UXinfo} from './style.js';
 import {Wrapper} from './style.js';
 
+import {withRouter} from 'react-router-dom';
+
 class NewsList extends Component {
     constructor(props){
         super(props);
         this.tabOfElementsToDisplay=[];
     }
 
-    nothingToDisplay = (conditions, terms) => {
+    nothingToDisplay = (theme) => {
         this.tabOfElementsToDisplay = [];
         const nothing = 
             <div className="loading" key="terms">
                 <span className="dot dot1"></span>
                 <span className="dot dot2"></span>
                 <span className="dot dot3"></span>
+                <p className="sorry">Sorry, We couldn't find any news</p>
+                <p className="sorry">Probably there is nothing to read about under Your searching conditions
+                or server is too busy to answer</p>
             </div>
         this.tabOfElementsToDisplay.push(nothing);
     }
@@ -32,15 +37,18 @@ class NewsList extends Component {
         })
     }
     render(){
-        (this.props.news && this.props.news.length > 1)?
+        (this.props.news&&this.props.news.length > 0)?
         this.divideNewsBetweenTilts(this.props.news):
-        this.nothingToDisplay(this.props.conditions, this.props.terms);
+        this.nothingToDisplay(this.props.theme);
 
         return(
+           
             <Wrapper>
                 <UXinfo>You have searched for <span>{this.props.theme}</span></UXinfo>
                 {this.tabOfElementsToDisplay}
             </Wrapper>
+            
+            
         );
     }
   }
@@ -55,4 +63,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     }, dispatch
 );
   
-export default connect(mapStateToProps, mapDispatchToProps)(NewsList);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NewsList));
+
+
+  
